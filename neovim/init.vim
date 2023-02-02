@@ -4,7 +4,7 @@ set undodir=~/.vim/undodir
 set undofile
 set guicursor=
 set relativenumber
-set hlsearch
+set nohlsearch
 set hidden
 set noerrorbells
 set tabstop=4 softtabstop=4
@@ -38,10 +38,12 @@ set shortmess+=c
 
 """""""""""""""""""""" START PLUGS """"""""""""""""""""""
 call plug#begin('~/.vim/plugged')
-" Status bar and stuff
-Plug 'nvim-telescope/telescope.nvim'
+" Status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" File Tree
+Plug 'preservim/nerdtree'
 
 " More Colorschemes
 Plug 'morhetz/gruvbox'
@@ -82,14 +84,16 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'andymass/vim-matchup'
 Plug 'jiangmiao/auto-pairs'
 
-" Makes my LSP-life painless and easy
-Plug 'VonHeikemen/lsp-zero.nvim'
-
 " Allows for MD previewing inside of Neovim
 Plug 'ellisonleao/glow.nvim'
 
 " Jupyter Notebook (*.ipynb) Extension
 Plug 'untitled-ai/jupyter_ascending.vim'
+
+" orgmode extensions
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-orgmode/orgmode'
+
 call plug#end()
 """"""""""""""""""""""" END PLUGS """""""""""""""""""""""
 
@@ -97,7 +101,7 @@ highlight Normal guibg=none
 
 " mode lhs rhs
 let mapleader = " "
-nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
+"nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 
 fun! TrimWhiteSpace()
     let l:save = winsaveview()
@@ -128,12 +132,25 @@ nmap <leader>0 <Plug>AirlineSelectTab0
 nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>+ <Plug>AirlineSelectNextTab
 
-" More LSP Config Stuff
-"lua require('lspconfig').bash-language-server.setup{...}
-lua <<EOF
-local lsp = require('lsp-zero')
-lsp.preset('recommended')
-lsp.setup()
+nmap <leader>x :bdelete<Enter>
+nmap <leader>f :NERDTree<Enter>
+
+" orgmode Configuration Script
+lua << EOF
+require('orgmode').setup_ts_grammar()
+
+require('nvim-treesitter.configs').setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = {'org'},
+  },
+  ensure_installed = {'org'},
+}
+
+require('orgmode').setup({
+  org_agenda_files = '~/Documents/Notes/org/*',
+  org_default_notes_file = '~/Documents/Notes/org/todos.org',
+})
 EOF
 
 " Colorscheme, obviously the most important part of programming...
