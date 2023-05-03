@@ -85,7 +85,7 @@ Plug 'andymass/vim-matchup'
 Plug 'jiangmiao/auto-pairs'
 
 " Allows for MD previewing inside of Neovim
-Plug 'ellisonleao/glow.nvim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " Jupyter Notebook (*.ipynb) Extension
 Plug 'untitled-ai/jupyter_ascending.vim'
@@ -154,4 +154,4 @@ require('orgmode').setup({
 EOF
 
 " Colorscheme, obviously the most important part of programming...
-colorscheme PaperColor
+colorscheme catppuccin
