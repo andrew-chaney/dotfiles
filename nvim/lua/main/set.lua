@@ -1,5 +1,5 @@
--- vim.o.background = "dark" -- for gruvbox ['light' for light theme]
-vim.cmd([[colorscheme carbonfox]])
+vim.o.background = "light" -- [light/dark for theming]
+vim.cmd([[colorscheme everforest]])
 
 vim.opt.guicursor = ""
 

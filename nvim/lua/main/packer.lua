@@ -12,12 +12,16 @@ return require('packer').startup(function(use)
   }
 
   -- Colorschemes
-  use('rose-pine/neovim')
-  use('ellisonleao/gruvbox.nvim')
-  use('folke/tokyonight.nvim')
-  use('EdenEast/nightfox.nvim')
-  use('rebelot/kanagawa.nvim')
+  use('bluz71/vim-moonfly-colors')
   use('catppuccin/nvim')
+  use('EdenEast/nightfox.nvim')
+  use('folke/tokyonight.nvim')
+  use('Mofiqul/adwaita.nvim')
+  use('rebelot/kanagawa.nvim')
+  use('rose-pine/neovim')
+  use('sainnhe/everforest')
+  use('sainnhe/gruvbox-material')
+  use('xero/miasma.nvim')
 
   -- Workflows
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
