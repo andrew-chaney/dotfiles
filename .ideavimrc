@@ -1,0 +1,7 @@
+set scrolloff=8
+set relativenumber
+
+map <C-d> <C-d>zz
+map <C-u> <C-u>zz
+map n nzz
+map N Nzz

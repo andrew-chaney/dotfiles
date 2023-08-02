@@ -53,6 +53,9 @@ return require('packer').startup(function(use)
 	  }
   }
 
+  -- Go Support
+  use('fatih/vim-go')
+
 
   use('rstacruz/vim-closer')
 
