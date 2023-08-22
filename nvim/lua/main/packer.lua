@@ -11,6 +11,11 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use {
+    'codota/tabnine-nvim',
+    run = './dl_binaries.sh'
+  }
+
   -- Colorschemes
   use('bluz71/vim-moonfly-colors')
   use('catppuccin/nvim')
@@ -22,6 +27,8 @@ return require('packer').startup(function(use)
   use('sainnhe/everforest')
   use('sainnhe/gruvbox-material')
   use('xero/miasma.nvim')
+  use('NLKNguyen/papercolor-theme')
+  use('Shatur/neovim-ayu')
 
   -- Workflows
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -56,6 +63,9 @@ return require('packer').startup(function(use)
   -- Go Support
   use('fatih/vim-go')
 
+
+  -- Linting it up
+  -- use('schrieveslaach/sonarlint.nvim')
 
   use('rstacruz/vim-closer')
 

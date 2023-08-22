@@ -4,6 +4,7 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
   'rust_analyzer',
+  'sonarlint-language-server'
 })
 
 -- Fix Undefined global 'vim'

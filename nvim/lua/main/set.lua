@@ -1,5 +1,6 @@
-vim.o.background = "light" -- [light/dark for theming]
-vim.cmd([[colorscheme everforest]])
+vim.o.background = "dark" -- [light/dark for theming]
+vim.opt.termguicolors = true
+vim.cmd([[colorscheme ayu-dark]])
 
 vim.opt.guicursor = ""
 
@@ -32,6 +33,6 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80" -- 120 for Java/Kotlin, 80 for others
 
 vim.g.mapleader = " "
