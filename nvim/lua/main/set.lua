@@ -1,6 +1,6 @@
 vim.o.background = "dark" -- [light/dark for theming]
 vim.opt.termguicolors = true
-vim.cmd([[colorscheme ayu-dark]])
+vim.cmd([[colorscheme gruvbox-material]])
 
 vim.opt.guicursor = ""
 
