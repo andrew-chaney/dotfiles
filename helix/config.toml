@@ -1,0 +1,9 @@
+theme = "everforest-light"
+
+[editor]
+line-number = "relative"
+mouse = false
+
+[editor.cursor-shape]
+select = "underline"
+
