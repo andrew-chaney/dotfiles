@@ -5,8 +5,6 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         'jedi_language_server',
         'rust_analyzer',
-        'solargraph',
-        'standardrb',
         'tsserver',
     },
     handlers = {
