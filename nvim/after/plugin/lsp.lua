@@ -3,7 +3,7 @@ local lsp = require('lsp-zero')
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'python-lsp-server',
+        'pylsp',
         'rust_analyzer',
         'tsserver',
     },
