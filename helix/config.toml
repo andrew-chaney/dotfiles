@@ -4,6 +4,7 @@ theme = "dark_high_contrast"
 line-number = "relative"
 mouse = false
 scrolloff = 10
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"

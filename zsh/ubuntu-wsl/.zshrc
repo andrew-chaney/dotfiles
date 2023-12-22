@@ -119,3 +119,9 @@ unset __conda_setup
 
 # Exports
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/andrew/.local/bin
+export M2_HOME="$HOME/.sdkman/candidates/maven/current/bin/mvn"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
