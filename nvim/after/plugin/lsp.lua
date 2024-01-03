@@ -3,7 +3,7 @@ local lsp = require('lsp-zero')
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
-        'pyright',
+        'pylsp',
         'rust_analyzer',
         'tsserver',
     },
@@ -13,6 +13,7 @@ require('mason-lspconfig').setup({
 })
 -- Others to install manually:
 -- markdownlint
+-- prettier
 -- sonarlint-language-server
 -- yamllint
 
