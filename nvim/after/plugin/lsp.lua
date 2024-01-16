@@ -3,6 +3,7 @@ local lsp = require('lsp-zero')
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
+        'kotlin_language_server',
         'pylsp',
         'rust_analyzer',
         'tsserver',

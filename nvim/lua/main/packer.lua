@@ -90,12 +90,12 @@ return require('packer').startup(function(use)
               workspaces = {
                   {
                       name = "personal",
-                      path = "~/vaults/personal",
+                      path = "/mnt/c/Users/andre/OneDrive/Documents/notes",
                   },
-                  {
-                      name = "work",
-                      path = "~/vaults/work",
-                  },
+                  -- {
+                  --     name = "work",
+                  --     path = "~/vaults/work",
+                  -- },
               },
 
           })
