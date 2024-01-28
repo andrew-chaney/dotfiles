@@ -77,30 +77,30 @@ return require('packer').startup(function(use)
   -- use('schrieveslaach/sonarlint.nvim')
 
   -- Obsidian Plugin
-  use({
-      "epwalsh/obsidian.nvim",
-      tag = "*",  -- recommended, use latest release instead of latest commit
-      requires = {
-          -- Required.
-          "nvim-lua/plenary.nvim",
+  -- use({
+  --     "epwalsh/obsidian.nvim",
+  --     tag = "*",  -- recommended, use latest release instead of latest commit
+  --     requires = {
+  --         -- Required.
+  --         "nvim-lua/plenary.nvim",
 
-      },
-      config = function()
-          require("obsidian").setup({
-              workspaces = {
-                  {
-                      name = "personal",
-                      path = "/mnt/c/Users/andre/OneDrive/Documents/notes",
-                  },
-                  -- {
-                  --     name = "work",
-                  --     path = "~/vaults/work",
-                  -- },
-              },
+  --     },
+  --     config = function()
+  --         require("obsidian").setup({
+  --             workspaces = {
+  --                 {
+  --                     name = "personal",
+  --                     path = "/mnt/c/Users/andre/OneDrive/Documents/notes",
+  --                 },
+  --                 -- {
+  --                 --     name = "work",
+  --                 --     path = "~/vaults/work",
+  --                 -- },
+  --             },
 
-          })
-      end,
-  })
+  --         })
+  --     end,
+  -- })
 
   use('rstacruz/vim-closer')
 
