@@ -1,6 +1,6 @@
 vim.o.background = "dark" -- [light/dark for theming]
 vim.opt.termguicolors = true
-vim.cmd([[colorscheme ayu]])
+vim.cmd([[colorscheme elflord]])
 
 vim.opt.guicursor = ""
 
