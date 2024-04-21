@@ -1,5 +1,4 @@
 return {
-  -- add gruvbox
   { "EdenEast/nightfox.nvim" },
   { "Mofiqul/adwaita.nvim" },
   { "NLKNguyen/papercolor-theme" },
@@ -12,12 +11,12 @@ return {
   { "sainnhe/everforest" },
   { "wittyjudge/gruvbox-material.nvim" },
   { "xero/miasma.nvim" },
+  { "lifepillar/vim-solarized8" },
 
-  -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "solarized8",
     },
   },
 }
