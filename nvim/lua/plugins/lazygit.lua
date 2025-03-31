@@ -5,6 +5,6 @@ return {
     },
     config = function()
         -- Open LazyGit window
-        vim.keymap.set("n", "<leader>ll", vim.cmd.LazyGit)
+        vim.keymap.set("n", "<leader>gl", vim.cmd.LazyGit, { desc = "[G]it - [L]azyGit" })
     end
 }

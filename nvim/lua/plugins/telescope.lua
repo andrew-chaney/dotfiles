@@ -13,9 +13,9 @@ return {
 
             -- Project
             -- set a vim motion to <Space> + f + f to search for files by their names
-            vim.keymap.set('n', '<leader>pf', builtin.find_files, {desc = "[P]roject [F]iles"})
+            vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "[P]roject [F]iles" })
             -- set a vim motion to <Space> + p + s to search for files based on the text inside of them
-            vim.keymap.set('n', '<leader>ps', builtin.live_grep, {desc = "[P]roject [S]earch"})
+            vim.keymap.set('n', '<leader>ps', builtin.live_grep, { desc = "[P]roject [S]earch" })
 
             -- Find
             -- set a vim motion to <Space> + f + d to search for Code Diagnostics in the current project
