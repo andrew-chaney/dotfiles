@@ -1,2 +1,0 @@
-- watch video to understand java navigation
-- fix the whichkey helper window
