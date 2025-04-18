@@ -17,3 +17,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- Exit Vim's insert mode
 vim.keymap.set("i", "<C-c>", "<Esc>")
+
+-- Filetree
+vim.keymap.set("n", "<leader>pv", vim.cmd.Lexplore)
