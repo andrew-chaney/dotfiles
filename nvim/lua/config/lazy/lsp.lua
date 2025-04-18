@@ -62,7 +62,7 @@ return {
                                 format = {
                                     enable = true,
                                     -- Put format options here
-                                    -- NOTE: the value should be STRING!!
+                                    -- NOTE: the value should be a string
                                     defaultConfig = {
                                         indent_style = "space",
                                         indent_size = "2",
