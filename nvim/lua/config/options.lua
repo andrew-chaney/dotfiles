@@ -16,8 +16,11 @@ vim.opt.smartindent = true -- enable smart indentation
 vim.opt.breakindent = true -- enable line breaking indentation
 
 -- General behaviors
+
+-- Might need to enable for nvim-tree?
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
 vim.opt.backup = false -- disable backup file creation
 vim.opt.clipboard = "unnamedplus" -- enable system clipboard access
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
