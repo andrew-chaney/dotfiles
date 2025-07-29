@@ -29,6 +29,20 @@ return {
         config = function()
             require("conform").setup({
                 formatters_by_ft = {
+                    css = { 'prettierd', 'prettier', stop_after_first = true },
+                    go = { 'goimports', 'gofumpt', stop_after_first = true },
+                    html = { 'prettierd', 'prettier', stop_after_first = true },
+                    json = { 'prettierd', 'prettier', stop_after_first = true },
+                    less = { 'prettierd', 'prettier', stop_after_first = true },
+                    lua = { 'stylua' },
+                    markdown = { 'prettierd', 'prettier', stop_after_first = true },
+                    -- typescript = { 'prettierd', 'prettier', stop_after_first = true },
+                    -- typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+                    yaml = { 'prettierd', 'prettier', stop_after_first = true },
+                },
+                format_on_save = {
+                    timeout_ms = 500,
+                    lsp_fallback = true,
                 }
             })
             local cmp = require('cmp')
@@ -43,10 +57,10 @@ return {
             require("mason").setup()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "lua_ls",
-                    "ts_ls",
-                    "jdtls",
                     "cssls",
+                    "gopls",
+                    "jdtls",
+                    "lua_ls",
                     "pylsp",
                 },
                 handlers = {
