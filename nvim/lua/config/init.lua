@@ -60,12 +60,6 @@ vim.cmd [[
     augroup end
 ]]
 
-vim.cmd [[
-    augroup autoformat_settings
-      autocmd FileType java AutoFormatBuffer google-java-format
-    augroup END
-]]
-
 autocmd("FileType", {
     pattern = "html",
     callback = function()
