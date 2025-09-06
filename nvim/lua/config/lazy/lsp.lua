@@ -32,6 +32,7 @@ return {
                     css = { 'prettierd', 'prettier', stop_after_first = true },
                     go = { 'goimports', 'gofumpt', stop_after_first = true },
                     html = { 'prettierd', 'prettier', stop_after_first = true },
+                    java = { 'google-java-format', stop_after_first = true },
                     json = { 'prettierd', 'prettier', stop_after_first = true },
                     less = { 'prettierd', 'prettier', stop_after_first = true },
                     lua = { 'stylua' },
@@ -58,7 +59,7 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "cssls",
-                    "gopls",
+                    -- "gopls",
                     "jdtls",
                     "lua_ls",
                     "pylsp",
