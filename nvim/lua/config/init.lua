@@ -57,18 +57,21 @@ vim.cmd [[
     augroup jdtls_lsp
         autocmd!
         autocmd FileType java lua require'config.jdtls'.setup_jdtls()
+        autocmd FileType java setlocal shiftwidth=2
+        autocmd FileType java setlocal softtabstop=2
+        autocmd FileType java setlocal tabstop=2
     augroup end
 ]]
 
-autocmd("FileType", {
-    pattern = "html",
-    callback = function()
-        vim.bo.expandtab   = true -- spaces instead of tabs :contentReference[oaicite:2]{index=2}
-        vim.bo.shiftwidth  = 2    -- how many spaces to use for each step of (auto)indent :contentReference[oaicite:3]{index=3}
-        vim.bo.softtabstop = 2    -- number of spaces that a <Tab> counts for while editing :contentReference[oaicite:4]{index=4}
-        vim.bo.tabstop     = 2    -- number of spaces that a <Tab> in the file counts for :contentReference[oaicite:5]{index=5}
-    end,
-})
+vim.cmd [[
+    augroup html_formatting
+        autocmd!
+        autocmd FileType html lua require'config.jdtls'.setup_jdtls()
+        autocmd FileType html setlocal shiftwidth=2
+        autocmd FileType html setlocal softtabstop=2
+        autocmd FileType html setlocal tabstop=2
+    augroup end
+]]
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

@@ -53,7 +53,7 @@ end
 local function java_keymaps()
     -- Allow yourself to run JdtCompile as a Vim command
     vim.cmd(
-    "command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)")
+        "command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)")
     -- Allow yourself/register to run JdtUpdateConfig as a Vim command
     vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()")
     -- Allow yourself/register to run JdtBytecode as a Vim command
