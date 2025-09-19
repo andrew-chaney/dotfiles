@@ -57,19 +57,16 @@ vim.cmd [[
     augroup jdtls_lsp
         autocmd!
         autocmd FileType java lua require'config.jdtls'.setup_jdtls()
-        autocmd FileType java setlocal shiftwidth=2
-        autocmd FileType java setlocal softtabstop=2
-        autocmd FileType java setlocal tabstop=2
     augroup end
 ]]
 
 vim.cmd [[
     augroup html_formatting
         autocmd!
-        autocmd FileType html lua require'config.jdtls'.setup_jdtls()
-        autocmd FileType html setlocal shiftwidth=2
-        autocmd FileType html setlocal softtabstop=2
-        autocmd FileType html setlocal tabstop=2
+        autocmd FileType html,xml lua require'config.jdtls'.setup_jdtls()
+        autocmd FileType html,xml setlocal shiftwidth=2
+        autocmd FileType html,xml setlocal softtabstop=2
+        autocmd FileType html,xml setlocal tabstop=2
     augroup end
 ]]
 

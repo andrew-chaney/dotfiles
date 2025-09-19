@@ -239,7 +239,7 @@ local function setup_jdtls()
                 parameterNames = {
                     enabled = "all"
                 }
-            }
+            },
         }
     }
 
