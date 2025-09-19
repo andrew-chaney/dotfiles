@@ -9,66 +9,49 @@ local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
 
 function R(name)
-    require("plenary.reload").reload_module(name)
+        require("plenary.reload").reload_module(name)
 end
 
 vim.filetype.add({
-    extension = {
-        templ = 'templ',
-    }
+        extension = {
+                templ = 'templ',
+        }
 })
 
 autocmd('TextYankPost', {
-    group = yank_group,
-    pattern = '*',
-    callback = function()
-        vim.highlight.on_yank({
-            higroup = 'IncSearch',
-            timeout = 40,
-        })
-    end,
+        group = yank_group,
+        pattern = '*',
+        callback = function()
+                vim.highlight.on_yank({
+                        higroup = 'IncSearch',
+                        timeout = 40,
+                })
+        end,
 })
 
 autocmd({ "BufWritePre" }, {
-    group = ConfigGroup,
-    pattern = "*",
-    command = [[%s/\s\+$//e]],
+        group = ConfigGroup,
+        pattern = "*",
+        command = [[%s/\s\+$//e]],
 })
 
 
 autocmd('LspAttach', {
-    group = ConfigGroup,
-    callback = function(e)
-        local opts = { buffer = e.buf }
-        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-        vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-        vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-        vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-        vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-        vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-        vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-        vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-        vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-    end
+        group = ConfigGroup,
+        callback = function(e)
+                local opts = { buffer = e.buf }
+                vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+                vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+                vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+                vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+                vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+                vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+                vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+                vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+                vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+                vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+        end
 })
-
-vim.cmd [[
-    augroup jdtls_lsp
-        autocmd!
-        autocmd FileType java lua require'config.jdtls'.setup_jdtls()
-    augroup end
-]]
-
-vim.cmd [[
-    augroup html_formatting
-        autocmd!
-        autocmd FileType html,xml lua require'config.jdtls'.setup_jdtls()
-        autocmd FileType html,xml setlocal shiftwidth=2
-        autocmd FileType html,xml setlocal softtabstop=2
-        autocmd FileType html,xml setlocal tabstop=2
-    augroup end
-]]
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
