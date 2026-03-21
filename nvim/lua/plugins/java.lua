@@ -2,7 +2,7 @@ return {
   {
     "mason-org/mason.nvim",
     opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, { "vscode-spring-boot-tools" })
+      vim.list_extend(opts.ensure_installed, { "jdtls" })
     end,
   },
 }
