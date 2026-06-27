@@ -7,6 +7,23 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("basedpyright_setup", { clear = true }),
+  pattern = "python",
+  callback = function()
+    local root = vim.fs.root(0, { "uv.lock", ".git" }) or vim.fn.getcwd()
+    vim.lsp.start({
+      name = "basedpyright",
+      cmd = { "basedpyright-langserver", "--stdio" },
+      root_dir = root,
+      settings = {
+        basedpyright = { analysis = { typeCheckingMode = "off" } },
+        python = { pythonPath = root .. "/.venv/bin/python" },
+      },
+    })
+  end,
+})
+
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   callback = function()
