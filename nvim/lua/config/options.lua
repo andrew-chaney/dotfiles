@@ -6,18 +6,20 @@
 vim.keymap.set("i", "<D-.>", "<Esc>", { noremap = true })
 vim.keymap.set("i", "<M-.>", "<Esc>", { noremap = true })
 
--- Blink Shell: to allow for copy and paste while within the shell over Mosh
 vim.opt.clipboard = "unnamedplus"
 
-local osc52 = require("vim.ui.clipboard.osc52")
-vim.g.clipboard = {
-  name = "OSC 52",
-  copy = {
-    ["+"] = osc52.copy("+"),
-    ["*"] = osc52.copy("*"),
-  },
-  paste = {
-    ["+"] = osc52.paste("+"),
-    ["*"] = osc52.paste("*"),
-  },
-}
+-- Blink Shell: to allow for copy and paste while within the shell over Mosh
+if vim.env.SSH_TTY or vim.env.SSH_CONNECTION then
+  local osc52 = require("vim.ui.clipboard.osc52")
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = osc52.copy("+"),
+      ["*"] = osc52.copy("*"),
+    },
+    paste = {
+      ["+"] = osc52.paste("+"),
+      ["*"] = osc52.paste("*"),
+    },
+  }
+end
