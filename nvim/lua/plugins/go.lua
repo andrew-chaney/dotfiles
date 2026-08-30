@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   {
     "nvim-treesitter/nvim-treesitter",
     opts = { ensure_installed = { "go" } },

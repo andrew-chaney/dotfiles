@@ -1,5 +1,6 @@
 -- Referenced https://www.lazyvim.org/extras/lang/kotlin
 return {
+  enabled = false,
   {
     "nvim-treesitter/nvim-treesitter",
     opts = { ensure_installed = { "kotlin" } },

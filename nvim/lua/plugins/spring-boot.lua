@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   {
     "mason-org/mason.nvim",
     opts = function(_, opts)
