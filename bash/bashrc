@@ -1,15 +1,3 @@
-### Homebrew Setup
-# Check for Apple Silicon Mac Homebrew
-if [ -x /opt/homebrew/bin/brew ]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-# Check for Linux Homebrew
-elif [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# Check for Intel Mac Homebrew
-elif [ -x /usr/local/bin/brew ]; then
-  eval "$(/usr/local/bin/brew shellenv)"
-fi
-
 # Aliases
 alias ll="ls -l"
 alias la="ls -la"

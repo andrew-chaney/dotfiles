@@ -10,12 +10,12 @@ read -sp "Enter your GitHub Personal Access Token (PAT) for $GH_TARGET: " GH_TOK
 echo -e "\n"
 
 if [ -z "$GH_TOKEN" ]; then
-  echo "Error: Token cannot be empty. Exiting
+  echo "Error: Token cannot be empty. Exiting"
   exit 1
 fi
 
 ### Setup Homebrew
-if ! command -v brew &> /dev/null; then
+if ! command -v brew &>/dev/null; then
   echo "Homebrew isn't installed, installing..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
@@ -55,7 +55,7 @@ brew install k9s
 brew install opentofu
 
 ### Git Setup
-if ! command -v git &> /dev/null; then
+if ! command -v git &>/dev/null; then
   brew install git
 fi
 
@@ -98,4 +98,3 @@ ln -s ~/workspace/dotfile/base/inputrc ~/.inputrc
 ln -s ~/workspace/dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/workspace/dotfiles/starship/starship.toml ~/.config/starship.toml
 ln -s ~/workspace/dotfile/nvim ~/.config/nvim
-
