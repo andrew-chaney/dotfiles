@@ -5,6 +5,9 @@ alias lg="lazygit"
 alias ff="fastfetch"
 alias dl="cd ~/workspace/dev-lab"
 
+# Go
+export GOPATH="~/go"
+
 # SOPS config
 export SOPS_EDITOR=vim
 
