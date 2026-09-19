@@ -92,11 +92,7 @@ echo ""
 
 # Sops
 echo "Installing sops..."
-mkdir -p "$GOPATH/src/github.com/getsops/sops/"
-git clone https://github.com/getsops/sops.git $GOPATH/src/github.com/getsops/sops/
-cd "$GOPATH/src/github.com/getsops/sops/"
-make install
-cd -
+go install github.com/getsops/sops/v3/cmd/sops@latest
 echo ""
 
 # Age

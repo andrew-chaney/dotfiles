@@ -6,7 +6,8 @@ alias ff="fastfetch"
 alias dl="cd ~/workspace/dev-lab"
 
 # Go
-export GOPATH="~/go"
+export GOPATH="$HOME/go"
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # SOPS config
 export SOPS_EDITOR=vim
