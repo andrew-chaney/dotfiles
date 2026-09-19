@@ -42,6 +42,11 @@ rm FiraCode.zip
 echo "INFO: you will need to update you terminal to use the FiraCode Mono Nerd Font for Neovim icons to work."
 echo ""
 
+# btop
+echo "Installing btop..."
+sudo apt install btop -y
+echo ""
+
 # LazyGit - per their GitHub (https://github.com/jesseduffield/lazygit#installation)
 echo "Installing lazygit..."
 # TODO: check if apt has it first
