@@ -31,6 +31,11 @@ sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt update
 sudo apt install neovim -y
 echo ""
 
+# Direnv
+echo "Installing direnv..."
+sudo apt install direnv -y
+echo ""
+
 # Nerd Font
 echo "Installing nerd fonts..."
 mkdir -p "$FONTS_DIR"

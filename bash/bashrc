@@ -10,7 +10,7 @@ export GOPATH="$HOME/go"
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # SOPS config
-export SOPS_EDITOR=vim
+export SOPS_EDITOR=nvim
 
 # Startship (must be last)
 eval "$(starship init bash)"
