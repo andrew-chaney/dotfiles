@@ -47,6 +47,11 @@ echo "Installing btop..."
 sudo apt install btop -y
 echo ""
 
+# Tailscale
+echo "Installing tailscale..."
+curl -fsSL https://tailscale.com/install.sh | sh
+echo ""
+
 # LazyGit - per their GitHub (https://github.com/jesseduffield/lazygit#installation)
 echo "Installing lazygit..."
 # TODO: check if apt has it first
