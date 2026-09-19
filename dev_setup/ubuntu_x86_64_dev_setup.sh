@@ -127,6 +127,7 @@ git clone git@github.com:andrew-chaney/dotfiles
 git clone git@github.com:andrew-chaney/composer
 git clone git@github.com:andrew-chaney/prototypes
 git clone git@github.com:andrew-chaney/masters-program
+git clone git@github.com:andrew-chaney/homelab
 echo ""
 
 # Wire Configurations
