@@ -52,6 +52,11 @@ echo "Installing btop..."
 sudo apt install btop -y
 echo ""
 
+# tree
+echo "Installing tree..."
+sudo apt install tree -y
+echo ""
+
 # Tailscale
 echo "Installing tailscale..."
 curl -fsSL https://tailscale.com/install.sh | sh
@@ -121,6 +126,17 @@ curl --proto '=https' --tlsv1.2 -fsSL https://get.opentofu.org/install-opentofu.
 chmod +x install-opentofu.sh
 ./install-opentofu.sh --install-method deb
 rm -f install-opentofu.sh
+echo ""
+
+# Terragrunt (https://docs.terragrunt.com/getting-started/install/)
+echo "Installing terragrunt..."
+curl -sSfL --proto '=https' --tlsv1.2 https://terragrunt.com/install | bash
+echo ""
+
+# Prek
+#
+echo "Installing prek..."
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.5.3/prek-installer.sh | sh
 echo ""
 
 # Git

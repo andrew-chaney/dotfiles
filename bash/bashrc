@@ -12,5 +12,14 @@ export PATH=$PATH:$(go env GOPATH)/bin
 # SOPS config
 export SOPS_EDITOR=nvim
 
+# Direnv Setup
+eval "$(direnv hook bash)"
+
+# Terragrun
+export PATH="$HOME/.terragrunt/bin:$PATH"
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
+
 # Startship (must be last)
 eval "$(starship init bash)"
