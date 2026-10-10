@@ -134,7 +134,6 @@ curl -sSfL --proto '=https' --tlsv1.2 https://terragrunt.com/install | bash
 echo ""
 
 # Prek
-#
 echo "Installing prek..."
 curl --proto '=https' --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.5.3/prek-installer.sh | sh
 echo ""
