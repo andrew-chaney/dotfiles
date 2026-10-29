@@ -3,7 +3,7 @@ alias ll="ls -l"
 alias la="ls -la"
 alias lg="lazygit"
 alias ff="fastfetch"
-alias dl="cd ~/workspace/dev-lab"
+alias tq="cd ~/workspace/talaria-quant/"
 
 # Go
 export GOPATH="$HOME/go"
@@ -23,3 +23,5 @@ export PATH="$HOME/.opencode/bin:$PATH"
 
 # Startship (must be last)
 eval "$(starship init bash)"
+
+source '/home/andrewchaney/.bash_completions/cli.sh'
