@@ -152,7 +152,7 @@ echo ""
 # Install language servers
 echo "Installing language servers for helix..."
 sudo apt install python3-pylsp shellcheck shfmt -y
-sudo npm install --global yaml-language-server vscode-langservers-extracted bash-language-server
+sudo npm install -g yaml-language-server vscode-langservers-extracted bash-language-server @taplo/cli
 go install golang.org/x/tools/gopls@latest
 echo ""
 
