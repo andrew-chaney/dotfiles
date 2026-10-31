@@ -1,11 +1,14 @@
 [language-server.ty]
 command = "uv"
 args = ["run", "--project", ".", "ty", "server"]
+required-root-patterns = ["uv.lock"]
 
 [language-server.ruff]
 command = "uv"
 args = ["run", "--project", ".", "ruff", "server"]
+required-root-patterns = ["uv.lock"]
 
 [[language]]
 name = "python"
 language-servers = ["ty", "ruff"]
+auto-format = true
