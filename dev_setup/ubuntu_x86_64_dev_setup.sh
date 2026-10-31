@@ -138,6 +138,24 @@ echo "Installing prek..."
 curl --proto '=https' --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.5.3/prek-installer.sh | sh
 echo ""
 
+# Helix
+echo "Installing helix..."
+sudo add-apt-repository ppa:maveonair/helix-editor && sudo apt update
+sudo apt install helix -y
+echo ""
+
+# Install npm
+echo "Installing npm..."
+sudo apt install npm -y
+echo ""
+
+# Install language servers
+echo "Installing language servers for helix..."
+sudo apt install python3-pylsp shellcheck shfmt -y
+sudo npm install --global yaml-language-server vscode-langservers-extracted bash-language-server
+go install golang.org/x/tools/gopls@latest
+echo ""
+
 # Git
 echo "Setting up git..."
 # TODO: install git if needed
@@ -164,5 +182,6 @@ ln -sf $HOME/workspace/dotfile/base/inputrc $HOME/.inputrc
 ln -sf $HOME/workspace/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ln -sf $HOME/workspace/dotfiles/starship/starship.toml $HOME/.config/starship.toml
 ln -sf $HOME/workspace/dotfile/nvim $HOME/.config/nvim
+ln -sf $HOME/workspace/dotfiles/helix $HOME/.config/helix
 source $HOME/.bashrc
 echo ""
