@@ -133,6 +133,15 @@ echo "Installing terragrunt..."
 curl -sSfL --proto '=https' --tlsv1.2 https://terragrunt.com/install | bash
 echo ""
 
+# Cloudflared
+echo "Installing cloudflared..."
+sudo mkdir -p --mode=0755 /usr/share/keyrings
+curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
+echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main' | sudo tee /etc/apt/sources.list.d/cloudflared.list
+sudo apt-get update && sudo apt-get install cloudflared
+apt-cache policy cloudflared
+echo ""
+
 # Prek
 echo "Installing prek..."
 curl --proto '=https' --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.5.3/prek-installer.sh | sh

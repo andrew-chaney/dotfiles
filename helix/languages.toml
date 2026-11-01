@@ -12,3 +12,13 @@ required-root-patterns = ["uv.lock"]
 name = "python"
 language-servers = ["ty", "ruff"]
 auto-format = true
+
+[language-server.just-lsp]
+command = "just-lsp"
+
+[[language]]
+name = "just"
+injection-regex = "just"
+file-types = ["justfile", "Justfile", ".justfile"]
+language-servers = [ "just-lsp" ]
+indent = { tab-width = 2, unit = "  " }

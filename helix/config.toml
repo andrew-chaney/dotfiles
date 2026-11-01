@@ -2,3 +2,4 @@ theme = "autumn_night"
 
 [keys.normal]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+C-y = [":new", ":insert-output yazi", ":buffer-close!", ":redraw"]
