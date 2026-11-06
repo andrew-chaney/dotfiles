@@ -22,3 +22,6 @@ injection-regex = "just"
 file-types = ["justfile", "Justfile", ".justfile"]
 language-servers = [ "just-lsp" ]
 indent = { tab-width = 2, unit = "  " }
+
+[language-server.gopls.config]
+"formatting.gofumpt" = true

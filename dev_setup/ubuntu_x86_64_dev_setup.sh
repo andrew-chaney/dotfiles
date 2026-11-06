@@ -86,13 +86,27 @@ echo ""
 
 # Go
 echo "Installing golang..."
-sudo apt install golang -y
-# TODO: Make sure that GOPATH exists in bashrc and log an error if it doesn't
-mkdir -p $GOPATH
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.27.3.linux-amd64.tar.gz
 echo ""
 
-# Response Parsing
-echo "Installing response parsing libs..."
+# Golangci-lint
+echo "Installing golangci-lint..."
+curl -sSfL https://golangci-lint.run/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.15.0
+echo ""
+
+# Yamllint
+echo "Installing yamllint..."
+sudo apt install yamllint -y
+echo ""
+
+# Task
+echo "Installing task..."
+curl -1sLf 'https://dl.cloudsmith.io/public/task/task/setup.deb.sh' | sudo -E bash
+sudo apt install task -y
+echo ""
+
+# Parsing
+echo "Installing parsing libs..."
 sudo apt install jq yq -y
 echo ""
 

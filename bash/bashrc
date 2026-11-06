@@ -7,6 +7,8 @@ alias tq="cd ~/workspace/talaria-quant/"
 
 # Go
 export GOPATH="$HOME/go"
+export PATH=$PATH:/usr/local/go/bin
+export PATH="$HOME/sdk/go1.27.3/bin:$PATH"
 export PATH=$PATH:$(go env GOPATH)/bin
 
 # SOPS config
