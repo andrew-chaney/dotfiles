@@ -86,12 +86,18 @@ echo ""
 
 # Go
 echo "Installing golang..."
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.27.3.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go 
+sudo tar -C /usr/local -xzf go1.27.3.linux-amd64.tar.gz
 echo ""
 
 # Golangci-lint
 echo "Installing golangci-lint..."
 curl -sSfL https://golangci-lint.run/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.15.0
+echo ""
+
+# Lefthook
+echo "Installing lefthook..."
+go install github.com/evilmartians/lefthook/v2@v2.2.2
 echo ""
 
 # Yamllint
