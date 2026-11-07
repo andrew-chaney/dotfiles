@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# TODO: clean up logging and make this easier to read when running
 # TODO: make indempotent and detect already installed libraries
+# TODO: find a good font to install for default
 
 # NOTE: this script assumes x86-64 architecture
 # TODO: verify architecture
@@ -25,26 +25,9 @@ echo "Installing tmux..."
 sudo apt install tmux -y
 echo ""
 
-# Neovim
-echo "Installing neovim..."
-sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt update
-sudo apt install neovim -y
-echo ""
-
 # Direnv
 echo "Installing direnv..."
 sudo apt install direnv -y
-echo ""
-
-# Nerd Font
-echo "Installing nerd fonts..."
-mkdir -p "$FONTS_DIR"
-cd "$FONTS_DIR"
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/FiraCode.zip
-unzip FiraCode.zip "*.ttf" -d "$FONTS_DIR"
-fc-cache -fv
-rm FiraCode.zip
-echo "INFO: you will need to update you terminal to use the FiraCode Mono Nerd Font for Neovim icons to work."
 echo ""
 
 # btop
@@ -204,8 +187,6 @@ echo "Setting up workspace..."
 mkdir -p "$TARGET_DIR"
 cd "$TARGET_DIR"
 git clone git@github.com:andrew-chaney/dotfiles
-git clone git@github.com:andrew-chaney/composer
-git clone git@github.com:andrew-chaney/prototypes
 git clone git@github.com:andrew-chaney/masters-program
 git clone git@github.com:andrew-chaney/homelab
 echo ""
@@ -217,7 +198,6 @@ ln -sf $HOME/workspace/dotfiles/bash/bashrc $HOME/.bashrc
 ln -sf $HOME/workspace/dotfile/base/inputrc $HOME/.inputrc
 ln -sf $HOME/workspace/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ln -sf $HOME/workspace/dotfiles/starship/starship.toml $HOME/.config/starship.toml
-ln -sf $HOME/workspace/dotfile/nvim $HOME/.config/nvim
 ln -sf $HOME/workspace/dotfiles/helix $HOME/.config/helix
 source $HOME/.bashrc
 echo ""
