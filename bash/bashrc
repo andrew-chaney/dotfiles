@@ -2,6 +2,7 @@
 alias ll="ls -l"
 alias la="ls -la"
 alias lg="lazygit"
+alias l="lefthook"
 alias ff="fastfetch"
 alias tq="cd ~/workspace/talaria-quant/"
 

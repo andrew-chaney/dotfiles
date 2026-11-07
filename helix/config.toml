@@ -9,6 +9,9 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.file-picker]
+hidden = false
+
 [keys.normal]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 C-y = [":new", ":insert-output yazi", ":buffer-close!", ":redraw"]
