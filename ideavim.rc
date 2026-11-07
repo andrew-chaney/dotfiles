@@ -1,5 +1,0 @@
-map <C-j> <Action>(SelectNextRow)
-map <C-k> <Action>(SelectPreviousRow)
-map <C-4> <Action>(ActivateUnitTestsToolWindow)
-map <C-Esc> <Action>(ActivateTerminalToolWindow)
-map <C-S-r> <Action>(RunContextConfiguration)
