@@ -67,17 +67,6 @@ echo "Installing uv..."
 curl -LsSf https://astral.sh/uv/install.sh | sh
 echo ""
 
-# Go
-echo "Installing golang..."
-sudo rm -rf /usr/local/go 
-sudo tar -C /usr/local -xzf go1.27.3.linux-amd64.tar.gz
-echo ""
-
-# Golangci-lint
-echo "Installing golangci-lint..."
-curl -sSfL https://golangci-lint.run/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.15.0
-echo ""
-
 # Lefthook
 echo "Installing lefthook..."
 go install github.com/evilmartians/lefthook/v2@v2.2.2
@@ -86,12 +75,6 @@ echo ""
 # Yamllint
 echo "Installing yamllint..."
 sudo apt install yamllint -y
-echo ""
-
-# Task
-echo "Installing task..."
-curl -1sLf 'https://dl.cloudsmith.io/public/task/task/setup.deb.sh' | sudo -E bash
-sudo apt install task -y
 echo ""
 
 # Parsing
@@ -154,13 +137,6 @@ echo ""
 echo "Installing helix..."
 sudo add-apt-repository ppa:maveonair/helix-editor && sudo apt update
 sudo apt install helix -y
-echo ""
-
-# Filetree (Yazi)
-echo "Installing filetree (yazi)..."
-curl -fsSL https://yazi-rs.github.io/builds/yazi-keyring.gpg | sudo tee /usr/share/keyrings/yazi-keyring.gpg >/dev/null
-echo 'deb [signed-by=/usr/share/keyrings/yazi-keyring.gpg] https://yazi-rs.github.io/builds/ stable main' | sudo tee /etc/apt/sources.list.d/yazi.list >/dev/null
-sudo apt update && sudo apt install yazi
 echo ""
 
 # Install npm
