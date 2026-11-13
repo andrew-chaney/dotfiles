@@ -25,6 +25,12 @@ echo "Installing tmux..."
 sudo apt install tmux -y
 echo ""
 
+# Neovim
+echo "Installing neovim..."
+sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt update
+sudo apt install neovim -y
+echo ""
+
 # Direnv
 echo "Installing direnv..."
 sudo apt install direnv -y
@@ -133,22 +139,9 @@ echo "Installing prek..."
 curl --proto '=https' --tlsv1.2 -LsSf https://github.com/j178/prek/releases/download/v0.5.3/prek-installer.sh | sh
 echo ""
 
-# Helix
-echo "Installing helix..."
-sudo add-apt-repository ppa:maveonair/helix-editor && sudo apt update
-sudo apt install helix -y
-echo ""
-
 # Install npm
 echo "Installing npm..."
 sudo apt install npm -y
-echo ""
-
-# Install language servers
-echo "Installing language servers for helix..."
-sudo apt install python3-pylsp shellcheck shfmt -y
-sudo npm install -g yaml-language-server vscode-langservers-extracted bash-language-server @taplo/cli
-go install golang.org/x/tools/gopls@latest
 echo ""
 
 # Git
@@ -174,6 +167,6 @@ ln -sf $HOME/workspace/dotfiles/bash/bashrc $HOME/.bashrc
 ln -sf $HOME/workspace/dotfile/base/inputrc $HOME/.inputrc
 ln -sf $HOME/workspace/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 ln -sf $HOME/workspace/dotfiles/starship/starship.toml $HOME/.config/starship.toml
-ln -sf $HOME/workspace/dotfiles/helix $HOME/.config/helix
+ln -sf $HOME/workspace/dotfile/nvim $HOME/.config/nvim
 source $HOME/.bashrc
 echo ""
