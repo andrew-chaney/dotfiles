@@ -31,6 +31,12 @@ sudo add-apt-repository ppa:neovim-ppa/unstable && sudo apt update
 sudo apt install neovim -y
 echo ""
 
+# Obsidian
+echo "Installing Obsidian..."
+flatpak install -y flathub md.obsidian.Obsidian
+echo "Follow Git backup instructions here: https://forum.obsidian.md/t/the-easiest-way-to-setup-obsidian-git-to-backup-notes/51429"
+echo ""
+
 # Direnv
 echo "Installing direnv..."
 sudo apt install direnv -y
@@ -156,6 +162,7 @@ echo "Setting up workspace..."
 mkdir -p "$TARGET_DIR"
 cd "$TARGET_DIR"
 git clone git@github.com:andrew-chaney/dotfiles
+git clone git@github.com:andrew-chaney/notes-vault.git
 git clone git@github.com:andrew-chaney/masters-program
 git clone git@github.com:andrew-chaney/homelab
 echo ""
